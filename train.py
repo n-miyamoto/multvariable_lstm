@@ -9,9 +9,9 @@ import time
 import sys
 import _pickle as cPickle
 
-IN_UNITS = 3
-HIDDEN_UNITS = 5
-OUT_UNITS = 3
+IN_UNITS = 5
+HIDDEN_UNITS = 80
+OUT_UNITS = 5
 TRAINING_EPOCHS = 4000
 DISPLAY_EPOCH = 10
 MINI_BATCH_SIZE = 100

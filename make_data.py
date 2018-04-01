@@ -6,7 +6,7 @@ import math
 import random
 import pandas as pd 
 
-ROW_SIZE = 3
+ROW_SIZE = 5
 TRAINING_START = 0
 TRAINING_SIGNAL_LENGTH = 100000
 
