@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from make_data import *
-from lstm import *
+from stacked_lstm import *
 import numpy as np
 from chainer import optimizers, cuda
 import time
@@ -10,7 +10,8 @@ import sys
 import _pickle as cPickle
 
 IN_UNITS = 5
-HIDDEN_UNITS = 80
+HIDDEN_UNITS_L1 = 80
+HIDDEN_UNITS_L2 = 80
 OUT_UNITS = 5
 TRAINING_EPOCHS = 4000
 DISPLAY_EPOCH = 10
@@ -49,7 +50,7 @@ if __name__ == "__main__":
     train_data = data_maker.make()
 
     # setup model
-    model = LSTM(IN_UNITS, HIDDEN_UNITS, OUT_UNITS)
+    model = LSTM(IN_UNITS, HIDDEN_UNITS_L1, HIDDEN_UNITS_L2 ,OUT_UNITS)
     for param in model.params():
         data = param.data
         data[:] = np.random.uniform(-0.1, 0.1, data.shape)
